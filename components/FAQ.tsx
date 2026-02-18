@@ -1,5 +1,5 @@
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 import { Language } from '../types';
 import { FAQS } from '../constants';
@@ -10,6 +10,16 @@ interface FAQProps {
 
 const FAQ: React.FC<FAQProps> = ({ lang }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const [content, setContent] = useState<any>(null);
+
+  useEffect(() => {
+    fetch('/api/content')
+      .then(res => res.json())
+      .then(data => setContent(data))
+      .catch(err => console.error(err));
+  }, []);
+
+  const faqsToDisplay = content?.faqs || FAQS;
 
   return (
     <section id="faq" className="py-32 bg-[#faf9f6]">
@@ -24,7 +34,7 @@ const FAQ: React.FC<FAQProps> = ({ lang }) => {
         </div>
 
         <div className="space-y-4">
-          {FAQS.map((faq, idx) => (
+          {faqsToDisplay.map((faq: any, idx: number) => (
             <div key={idx} className="bg-white rounded-3xl border border-gray-100 overflow-hidden transition-all shadow-sm">
               <button
                 onClick={() => setOpenIndex(openIndex === idx ? null : idx)}

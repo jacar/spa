@@ -31,6 +31,9 @@ console.log('Ruta de datos:', DATA_FILE);
 app.get('/api/content', async (req, res) => {
     try {
         const data = await fs.readFile(DATA_FILE, 'utf-8');
+        res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+        res.setHeader('Pragma', 'no-cache');
+        res.setHeader('Expires', '0');
         res.json(JSON.parse(data));
     } catch (error) {
         res.status(500).json({ error: 'Error al leer el contenido' });
