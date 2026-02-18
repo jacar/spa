@@ -22,6 +22,9 @@ try {
 app.use(cors());
 app.use(express.json());
 
+// Servir archivos estáticos del frontend (dist)
+app.use(express.static(path.join(__dirname, 'dist')));
+
 console.log('Ruta de datos:', DATA_FILE);
 
 // Leer contenido
@@ -45,6 +48,11 @@ app.post('/api/content', async (req, res) => {
     }
 });
 
-app.listen(PORT, () => {
-    console.log(`Backend del CMS corriendo en http://localhost:${PORT}`);
+// Ruta catch-all para React (SPA)
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist', 'index.html'));
+});
+
+app.listen(PORT, '0.0.0.0', () => {
+    console.log(`Servidor unificado corriendo en http://localhost:${PORT}`);
 });
