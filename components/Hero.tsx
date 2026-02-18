@@ -28,7 +28,7 @@ const Hero: React.FC<HeroProps> = ({ lang, previewData }) => {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center overflow-hidden bg-[#faf9f6]">
+    <section id="home" className="relative min-h-screen flex items-center overflow-x-hidden bg-[#faf9f6]">
       {/* Background with overlay */}
       <div className="absolute inset-0 z-0">
         <img
@@ -46,7 +46,7 @@ const Hero: React.FC<HeroProps> = ({ lang, previewData }) => {
           <span className="inline-block px-4 py-2 bg-[#56b4bd]/10 text-[#56b4bd] text-[10px] font-black tracking-[0.3em] rounded-2xl mb-6 md:mb-8 uppercase backdrop-blur-sm border border-[#56b4bd]/10">
             {lang === 'en' ? 'YESICA SERRANO | OWNER & FULL SPECIALIST' : 'YÉSICA SERRANO | DUEÑA Y ESPECIALISTA'}
           </span>
-          <h1 className="text-5xl md:text-8xl font-serif text-[#1a1a1a] mb-6 md:mb-8 leading-[1.1] tracking-tight">
+          <h1 className="text-5xl md:text-8xl font-serif text-[#1a1a1a] mb-6 md:mb-8 leading-[1.1] tracking-tight break-words hyphens-auto">
             {heroData.title[lang]}
           </h1>
           <p className="text-base md:text-2xl text-gray-700 mb-4 leading-relaxed font-light italic max-w-lg">

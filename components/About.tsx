@@ -26,7 +26,7 @@ const About: React.FC<AboutProps> = ({ lang, previewData }) => {
   };
 
   return (
-    <section id="about" className="py-32 bg-[#fdfcfb]">
+    <section id="about" className="py-32 bg-[#fdfcfb] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row items-center gap-20">
           <div className="lg:w-1/2 relative">

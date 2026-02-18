@@ -27,7 +27,7 @@ const Contact: React.FC<ContactProps> = ({ lang, previewData }) => {
   const socials = activeContent?.socials || SOCIAL_LINKS;
 
   return (
-    <section id="contact" className="py-24 md:py-32 bg-white flex items-center">
+    <section id="contact" className="py-24 md:py-32 bg-white flex items-center overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col lg:flex-row gap-20">
           <div className="lg:w-5/12">

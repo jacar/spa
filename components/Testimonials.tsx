@@ -22,7 +22,7 @@ const Testimonials: React.FC<TestimonialsProps> = ({ lang, previewData }) => {
   const testimonialsToDisplay = previewData || content?.testimonials || TESTIMONIALS;
 
   return (
-    <section id="testimonials" className="py-24 md:py-32 bg-[#faf9f6]">
+    <section id="testimonials" className="py-24 md:py-32 bg-[#faf9f6] overflow-hidden relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <span className="text-[#56b4bd] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">
