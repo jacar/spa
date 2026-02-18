@@ -22,7 +22,7 @@ const AdminDashboard: React.FC = () => {
 
     const fetchContent = async () => {
         try {
-            const res = await axios.get('http://localhost:3005/api/content');
+            const res = await axios.get('/api/content');
             setContent(res.data);
         } catch (err) {
             console.error('Error fetching content', err);
@@ -32,7 +32,7 @@ const AdminDashboard: React.FC = () => {
     const handleSave = async () => {
         setSaving(true);
         try {
-            await axios.post('http://localhost:3005/api/content', content);
+            await axios.post('/api/content', content);
             setMessage('¡Contenido guardado con éxito!');
             setTimeout(() => setMessage(''), 3000);
         } catch (err) {

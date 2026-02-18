@@ -12,7 +12,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
   const [chatData, setChatData] = useState<any>(null);
 
   useEffect(() => {
-    fetch('http://localhost:3005/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => setChatData(data?.chat))
       .catch(err => console.error(err));

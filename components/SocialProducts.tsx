@@ -10,7 +10,7 @@ const SocialProducts: React.FC<SocialProductsProps> = ({ lang, previewData }) =>
 
     useEffect(() => {
         if (previewData) return;
-        fetch('http://localhost:3005/api/content')
+        fetch('/api/content')
             .then(res => res.json())
             .then(d => setData(d?.products))
             .catch(err => console.error(err));

@@ -14,7 +14,7 @@ const Services: React.FC<ServicesProps> = ({ lang, previewData }) => {
 
   useEffect(() => {
     if (previewData) return;
-    fetch('http://localhost:3005/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => setContent(data))
       .catch(err => console.error(err));

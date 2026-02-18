@@ -10,7 +10,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
   const [links, setLinks] = useState<any>(SOCIAL_LINKS);
 
   useEffect(() => {
-    fetch('http://localhost:3005/api/content')
+    fetch('/api/content')
       .then(res => res.json())
       .then(data => {
         if (data?.socials) setLinks(data.socials);
