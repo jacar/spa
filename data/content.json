@@ -1,0 +1,165 @@
+{
+  "hero": {
+    "title": {
+      "en": "Your Transformation Begins Here",
+      "es": "Tu Transformación Comienza Aquí"
+    },
+    "subtitle": {
+      "en": "Divine Aesthetics Spa",
+      "es": "Divine Aesthetics Spa"
+    },
+    "backgroundImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/headerpng.png"
+  },
+  "about": {
+    "founderName": "Yésica Serrano",
+    "founderPhoto": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/yesica.png"
+  },
+  "services": [
+    {
+      "id": "facials",
+      "title": {
+        "en": "Facial Cleanings",
+        "es": "Limpieza Facial"
+      },
+      "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "rejuvenation",
+      "title": {
+        "en": "Facial Rejuvenation",
+        "es": "Rejuvenecimiento Facial"
+      },
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "body-cleaning",
+      "title": {
+        "en": "Body Cleansing (Back, Arms, Chest)",
+        "es": "Limpieza (Espalda, Brazos, Pecho)"
+      },
+      "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop"
+    },
+    {
+      "id": "acne",
+      "title": {
+        "en": "Acne Treatments",
+        "es": "Tratamientos para el Acné"
+      },
+      "image": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop",
+      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM-1.jpeg",
+      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM.jpeg"
+    },
+    {
+      "id": "kobido",
+      "title": {
+        "en": "Kobido Facial Massages",
+        "es": "Masajes Faciales Kobido"
+      },
+      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "men-manipedi",
+      "title": {
+        "en": "Manicure & Pedicure for Men",
+        "es": "Manicura y Pedicura para Hombres"
+      },
+      "image": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "reflexology",
+      "title": {
+        "en": "Foot Reflexology",
+        "es": "Reflexología Podal"
+      },
+      "image": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop"
+    },
+    {
+      "id": "whitening",
+      "title": {
+        "en": "Body Areas Whitening",
+        "es": "Blanqueamiento de Zonas Corporales"
+      },
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop"
+    }
+  ],
+  "testimonials": [
+    {
+      "id": 1,
+      "name": "Carolina Martinez",
+      "text": {
+        "en": "Yesica has a magical touch. My skin has never looked so clear and radiant. The Kobido massage is a must-try!",
+        "es": "Yésica tiene un toque mágico. Mi piel nunca se ha visto tan clara y radiante. ¡El masaje Kobido es algo que debes probar!"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Sarah Johnson",
+      "text": {
+        "en": "Best facial rejuvenation in Jacksonville. They look natural and last so long. Highly recommend Divine Aesthetics.",
+        "es": "El mejor rejuvenecimiento facial en Jacksonville. Se ve natural y los resultados son increíbles. Recomiendo mucho Divine Aesthetics."
+      }
+    },
+    {
+      "id": 3,
+      "name": "Luis Rodriguez",
+      "text": {
+        "en": "The deep cleansing back treatment was exactly what I needed. Professional, clean, and very relaxing studio.",
+        "es": "El tratamiento de limpieza profunda de espalda era exactamente lo que necesitaba. Un estudio profesional, limpio y muy relajante."
+      }
+    }
+  ],
+  "gallery": [
+    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop",
+    "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.48.20-PM-1.jpeg",
+    "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop",
+    "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.48.20-PM.jpeg",
+    "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.58.58-PM.jpeg",
+    "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.58.57-PM.jpeg"
+  ],
+  "beforeAfter": [
+    {
+      "id": 1,
+      "title": {
+        "en": "Deep Cleansing Results",
+        "es": "Resultados Limpieza Profunda"
+      },
+      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/antes.png",
+      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/despues.png"
+    },
+    {
+      "id": 2,
+      "title": {
+        "en": "Hair restoration treatment",
+        "es": "Éxito en Tratamiento  Capilar"
+      },
+      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/a_1.png",
+      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/des.png"
+    }
+  ],
+  "chat": {
+    "instructorImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png",
+    "message": {
+      "en": "Looking for personalized advice? Chat with us!",
+      "es": "¿Buscas asesoría personalizada? ¡Chatea con nosotros!"
+    }
+  },
+  "socials": {
+    "instagram": "https://www.instagram.com/divineaesthetics93",
+    "tiktok": "https://www.tiktok.com/@divineaesthetics93",
+    "facebook": "https://www.facebook.com/yesica.serrano.601861"
+  },
+  "products": {
+    "title": {
+      "en": "Divine Essentials",
+      "es": "Esenciales Divine"
+    },
+    "facebookEmbed": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fyesica.serrano.601861%2Fposts%2Fpfbid0pMGArhgBwXDPcnVWZe8dpmg2NAwjxCjEAJsaisJNbG51rCicTqYtNZitkiaaPXckl&show_text=true&width=500"
+  },
+  "contact": {
+    "phone": "(904) 806-6898",
+    "email": "Spadivineaesthetics93@gmail.com",
+    "address": "42 Patina Pl, Saint Augustine FL 32092, USA"
+  }
+}
