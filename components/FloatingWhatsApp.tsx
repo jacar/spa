@@ -90,13 +90,11 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
 
         <div className={`p-1 bg-white rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-110 active:scale-95 ${isOpen ? 'rotate-12' : ''}`}>
           <div className="w-14 h-14 rounded-xl overflow-hidden relative">
-            {chatData?.instructorImage ? (
-              <img src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png" className="w-full h-full object-cover" alt="Advisor" />
-            ) : (
-              <div className="w-full h-full bg-[#25d366] flex items-center justify-center text-white">
-                <MessageCircle size={28} />
-              </div>
-            )}
+            <img
+              src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png"
+              className="w-full h-full object-cover"
+              alt="Advisor"
+            />
             <div className="absolute bottom-1 right-1 w-3 h-3 bg-[#25d366] border-2 border-white rounded-full"></div>
           </div>
         </div>
