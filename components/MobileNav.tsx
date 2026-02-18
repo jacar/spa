@@ -39,30 +39,32 @@ const MobileNav: React.FC<MobileNavProps> = ({ lang }) => {
   ];
 
   return (
-    <div className="md:hidden fixed bottom-0 left-0 right-0 z-[100] px-4 pb-safe pb-4">
-      <div className="bg-white/80 backdrop-blur-xl border border-gray-100 shadow-[0_-8px_30px_rgb(0,0,0,0.04)] rounded-[2.5rem] flex items-center justify-around py-3 px-2">
+    <div className="md:hidden fixed bottom-6 left-0 right-0 z-[100] px-6">
+      <div className="bg-white/90 backdrop-blur-2xl border border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.1)] rounded-[2.5rem] flex items-center justify-around py-4 px-2">
         {navItems.map((item) => (
           <a
             key={item.id}
             href={`#${item.id}`}
             onClick={() => setActiveTab(item.id)}
-            className="flex flex-col items-center justify-center relative w-16 h-12 transition-all duration-300"
+            className="flex flex-col items-center justify-center relative w-14 h-11 transition-all duration-300"
           >
             <item.icon
-              size={20}
-              className={`transition-colors duration-300 ${
-                activeTab === item.id ? 'text-[#56b4bd]' : 'text-gray-400'
-              }`}
+              size={22}
+              className={`transition-all duration-500 ${activeTab === item.id
+                  ? 'text-[#56b4bd] scale-110'
+                  : 'text-gray-400 opacity-60'
+                }`}
             />
             <span
-              className={`text-[9px] mt-1 font-bold uppercase tracking-widest transition-colors duration-300 ${
-                activeTab === item.id ? 'text-[#56b4bd]' : 'text-gray-400'
-              }`}
+              className={`text-[8px] mt-1.5 font-black uppercase tracking-[0.1em] transition-all duration-500 ${activeTab === item.id
+                  ? 'text-[#56b4bd] opacity-100'
+                  : 'text-gray-400 opacity-40'
+                }`}
             >
               {item.label[lang]}
             </span>
             {activeTab === item.id && (
-              <span className="absolute -top-1 w-1 h-1 bg-[#56b4bd] rounded-full shadow-[0_0_8px_#56b4bd]"></span>
+              <span className="absolute -bottom-1 w-5 h-1 bg-[#56b4bd] rounded-full shadow-[0_0_12px_#56b4bd] transition-all duration-500"></span>
             )}
           </a>
         ))}

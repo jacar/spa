@@ -22,7 +22,7 @@ function MainApp({ lang, toggleLang }: { lang: Language, toggleLang: () => void 
   return (
     <div className="min-h-screen bg-white selection:bg-[#56b4bd]/20 selection:text-[#56b4bd]">
       <Header lang={lang} toggleLang={toggleLang} />
-      {/* MobileNav removed in favor of hamburger menu as requested */}
+      <MobileNav lang={lang} />
       <main>
         <Hero lang={lang} />
         <Services lang={lang} />

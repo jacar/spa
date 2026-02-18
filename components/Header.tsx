@@ -84,9 +84,9 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLang }) => {
               </button>
               <button
                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-2 text-[#1a1a1a] hover:text-[#56b4bd] transition-colors"
+                className="p-3 bg-white/80 backdrop-blur-md shadow-lg rounded-2xl text-[#1a1a1a] hover:text-[#56b4bd] transition-all active:scale-90 border border-gray-100"
               >
-                {isMenuOpen ? <X size={28} /> : <Menu size={28} />}
+                {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
               </button>
             </div>
           </div>

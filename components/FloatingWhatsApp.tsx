@@ -28,7 +28,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
   };
 
   return (
-    <div className="fixed bottom-10 right-6 md:right-10 z-[60] flex flex-col items-end">
+    <div className="fixed bottom-28 md:bottom-10 right-6 md:right-10 z-[60] flex flex-col items-end">
       {/* Menu Backdrop for Mobile */}
       {isOpen && (
         <div
@@ -49,7 +49,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
           </div>
           {chatData?.instructorImage && (
             <div className="flex items-center space-x-4 mb-4 bg-white/10 p-3 rounded-2xl">
-              <img src={chatData.instructorImage} className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-lg" alt="Advisor" />
+              <img src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png" className="w-12 h-12 rounded-full object-cover border-2 border-white shadow-lg" alt="Advisor" />
               <p className="text-[10px] font-bold tracking-tight">
                 {chatData.message?.[lang] || (lang === 'en' ? 'Hi! How can I help you today?' : '¡Hola! ¿Cómo puedo ayudarte hoy?')}
               </p>
@@ -91,7 +91,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
         <div className={`p-1 bg-white rounded-2xl shadow-2xl transition-all duration-500 transform hover:scale-110 active:scale-95 ${isOpen ? 'rotate-12' : ''}`}>
           <div className="w-14 h-14 rounded-xl overflow-hidden relative">
             {chatData?.instructorImage ? (
-              <img src={chatData.instructorImage} className="w-full h-full object-cover" alt="Advisor" />
+              <img src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png" className="w-full h-full object-cover" alt="Advisor" />
             ) : (
               <div className="w-full h-full bg-[#25d366] flex items-center justify-center text-white">
                 <MessageCircle size={28} />
