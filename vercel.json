@@ -1,17 +1,12 @@
 {
     "rewrites": [
         {
-            "source": "/api/(.*)",
-            "destination": "/api/$1"
+            "source": "/api/content",
+            "destination": "/api/content.js"
         },
         {
             "source": "/(.*)",
             "destination": "/index.html"
         }
-    ],
-    "functions": {
-        "api/**": {
-            "runtime": "nodejs18.x"
-        }
-    }
+    ]
 }
