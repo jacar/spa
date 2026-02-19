@@ -81,7 +81,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
         onClick={() => setIsOpen(!isOpen)}
         className="relative group focus:outline-none"
       >
-        <div className={`absolute -top-12 right-0 bg-white px-4 py-2 rounded-xl shadow-xl border border-gray-100 transition-all duration-500 transform ${isOpen ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
+        <div className={`hidden md:block absolute -top-12 right-0 bg-white px-4 py-2 rounded-xl shadow-xl border border-gray-100 transition-all duration-500 transform ${isOpen ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
           <p className="text-[9px] font-black text-[#25d366] uppercase tracking-widest whitespace-nowrap">
             {chatData?.message?.[lang] || (lang === 'en' ? 'Chat now' : 'Chat ahora')}
           </p>
