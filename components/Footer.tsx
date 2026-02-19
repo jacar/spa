@@ -102,7 +102,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
             <div className="col-span-1 md:col-span-2">
               <div className="flex items-center mb-8">
                 <img
-                  src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/Aesthetics-2.png"
+                  src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/Aestheticslogo-1.png"
                   alt="Divine Aesthetics Logo"
                   className="h-28 w-auto object-contain brightness-0 invert"
                 />

@@ -38,7 +38,7 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLang }) => {
             {/* Logo Brand */}
             <a href="#home" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
               <img
-                src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/Aesthetics-2.png"
+                src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/Aestheticslogo-1.png"
                 alt="Divine Aesthetics Logo"
                 className="h-14 md:h-20 w-auto object-contain"
               />
