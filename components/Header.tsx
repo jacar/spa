@@ -29,7 +29,7 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLang }) => {
 
   return (
     <>
-      <nav className={`fixed w-full z-[60] transition-all duration-500 ${scrolled
+      <nav className={`fixed w-full z-[1000] transition-all duration-500 ${scrolled
         ? 'bg-white/90 backdrop-blur-lg shadow-sm py-3'
         : 'bg-transparent py-6'
         }`}>
@@ -94,7 +94,7 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLang }) => {
       </nav>
 
       {/* Mobile Fullscreen Menu */}
-      <div className={`fixed inset-0 z-[55] bg-white transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      <div className={`fixed inset-0 z-[999] bg-white transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none'
         }`}>
         <div className="flex flex-col h-full pt-32 pb-12 px-8 overflow-y-auto">
           <div className="flex flex-col space-y-8">
