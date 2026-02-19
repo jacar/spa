@@ -56,6 +56,12 @@ app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-app.listen(PORT, '0.0.0.0', () => {
-    console.log(`Servidor unificado corriendo en http://localhost:${PORT}`);
-});
+// Vercel serverless export
+export default app;
+
+// Only listen if run directly (local dev)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, '0.0.0.0', () => {
+        console.log(`Servidor unificado corriendo en http://localhost:${PORT}`);
+    });
+}
