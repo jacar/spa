@@ -28,7 +28,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
   };
 
   return (
-    <div className="fixed bottom-28 md:bottom-10 right-6 md:right-10 z-[60] flex flex-col items-end">
+    <div className="fixed bottom-28 md:bottom-10 right-6 md:right-10 z-[60] flex flex-col items-end pointer-events-none">
       {/* Menu Backdrop for Mobile */}
       {isOpen && (
         <div
@@ -38,7 +38,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
       )}
 
       {/* Services Menu */}
-      <div className={`mb-4 w-72 md:w-80 bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden transition-all duration-500 transform origin-bottom-right ${isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-10 pointer-events-none'
+      <div className={`mb-4 w-72 md:w-80 bg-white rounded-[2rem] shadow-2xl border border-gray-100 overflow-hidden transition-all duration-500 transform origin-bottom-right pointer-events-auto ${isOpen ? 'scale-100 opacity-100 translate-y-0' : 'scale-90 opacity-0 translate-y-10 pointer-events-none'
         }`}>
         <div className="bg-[#25d366] p-6 text-white">
           <div className="flex justify-between items-center mb-4">
@@ -79,7 +79,7 @@ const FloatingWhatsApp: React.FC<FloatingWhatsAppProps> = ({ lang }) => {
       {/* Main Trigger */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="relative group focus:outline-none"
+        className="relative group focus:outline-none pointer-events-auto"
       >
         <div className={`hidden md:block absolute -top-12 right-0 bg-white px-4 py-2 rounded-xl shadow-xl border border-gray-100 transition-all duration-500 transform ${isOpen ? 'opacity-0 scale-90' : 'opacity-100 scale-100'}`}>
           <p className="text-[9px] font-black text-[#25d366] uppercase tracking-widest whitespace-nowrap">

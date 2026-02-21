@@ -19,6 +19,7 @@ import { ServiceItem, NavLink, Testimonial, FAQItem } from './types';
 export const NAV_LINKS: NavLink[] = [
   { label: { en: 'Home', es: 'Inicio' }, href: '#home' },
   { label: { en: 'Services', es: 'Servicios' }, href: '#services' },
+  { label: { en: 'Results', es: 'Resultados' }, href: '#results' },
   { label: { en: 'About', es: 'Sobre Mí' }, href: '#about' },
   { label: { en: 'Gallery', es: 'Galería' }, href: '#gallery' },
   { label: { en: 'Reviews', es: 'Reseñas' }, href: '#testimonials' },
@@ -148,7 +149,9 @@ export const GALLERY_IMAGES = [
   'https://lavandacasaspa.com/wp-content/uploads/2020/09/conoce-nuestros-tratamientos-corporales-spa-profesionales.jpg',
   'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop',
-  'https://agendapro.com/blog/wp-content/uploads/sites/2/2024/06/terapeuta20spa.jpg'
+  'https://agendapro.com/blog/wp-content/uploads/sites/2/2024/06/terapeuta20spa.jpg',
+  'https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=1974&auto=format&fit=crop',
+  'https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop'
 ];
 
 export const CONTACT_INFO = {

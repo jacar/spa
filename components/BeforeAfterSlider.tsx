@@ -90,13 +90,35 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ lang, previewData
 
     useEffect(() => {
         if (previewData) return;
+
+        const loadLocalData = () => {
+            fetch('/data/content.json')
+                .then(res => res.json())
+                .then(localData => {
+                    const localBa = localData?.beforeAfter;
+                    setContent(Array.isArray(localBa) ? localBa : (localBa ? [localBa] : []));
+                })
+                .catch(err => console.error('Local fallback error:', err));
+        };
+
         fetch('/api/content')
-            .then(res => res.json())
+            .then(res => {
+                if (!res.ok) throw new Error('Network response was not ok');
+                return res.json();
+            })
             .then(data => {
                 const ba = data?.beforeAfter;
-                setContent(Array.isArray(ba) ? ba : [ba]);
+                const items = Array.isArray(ba) ? ba : (ba ? [ba] : []);
+                if (items.length === 0) {
+                    loadLocalData();
+                } else {
+                    setContent(items);
+                }
             })
-            .catch(err => console.error(err));
+            .catch(err => {
+                console.warn('API fetch failed, trying local fallback:', err);
+                loadLocalData();
+            });
     }, [previewData]);
 
     const baToDisplay = previewData ? (Array.isArray(previewData) ? previewData : [previewData]) : content;
@@ -104,7 +126,7 @@ const BeforeAfterSlider: React.FC<BeforeAfterSliderProps> = ({ lang, previewData
     if (!baToDisplay || baToDisplay.length === 0) return null;
 
     return (
-        <section className="py-24 bg-[#fdfcfb] overflow-hidden">
+        <section id="results" className="py-24 bg-[#fdfcfb] overflow-hidden">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16 px-4">
                     <span className="text-[#56b4bd] text-[10px] font-black uppercase tracking-[0.4em] mb-4 block">

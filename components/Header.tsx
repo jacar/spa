@@ -36,7 +36,11 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLang }) => {
         <div className="max-w-7xl mx-auto px-6">
           <div className="flex justify-between items-center">
             {/* Logo Brand */}
-            <a href="#home" className="flex items-center" onClick={() => setIsMenuOpen(false)}>
+            <a href="#home" className="flex items-center" onClick={(e) => {
+              if (window.innerWidth < 768) {
+                setIsMenuOpen(false);
+              }
+            }}>
               <img
                 src="https://www.webcincodev.com/blog/wp-content/uploads/2026/02/Aestheticslogo-1.png"
                 alt="Divine Aesthetics Logo"
@@ -94,7 +98,7 @@ const Header: React.FC<HeaderProps> = ({ lang, toggleLang }) => {
       </nav>
 
       {/* Mobile Fullscreen Menu */}
-      <div className={`fixed inset-0 z-[999] bg-white transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none'
+      <div className={`fixed inset-0 z-[999] bg-white transition-all duration-500 ease-in-out transform ${isMenuOpen ? 'translate-x-0 pointer-events-auto' : 'translate-x-full pointer-events-none invisible'
         }`}>
         <div className="flex flex-col h-full pt-32 pb-12 px-8 overflow-y-auto">
           <div className="flex flex-col space-y-8">
