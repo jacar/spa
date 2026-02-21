@@ -46,26 +46,23 @@ const MobileNav: React.FC<MobileNavProps> = ({ lang }) => {
             key={item.id}
             href={`#${item.id}`}
             onClick={() => setActiveTab(item.id)}
-            className="flex flex-col items-center justify-center relative w-14 h-11 transition-all duration-300"
+            className="flex flex-col items-center justify-center relative transition-all duration-300 group px-3 h-16"
           >
             <item.icon
-              size={22}
+              size={26}
               className={`transition-all duration-500 ${activeTab === item.id
-                  ? 'text-[#56b4bd] scale-110'
-                  : 'text-gray-400 opacity-60'
+                  ? 'text-[#56b4bd] scale-125 drop-shadow-[2px_3px_2px_rgba(0,0,0,0.15)]'
+                  : 'text-gray-400 opacity-70 group-hover:opacity-100'
                 }`}
             />
             <span
-              className={`text-[8px] mt-1.5 font-black uppercase tracking-[0.1em] transition-all duration-500 ${activeTab === item.id
+              className={`text-[8px] mt-2 font-bold uppercase tracking-[0.1em] transition-all duration-500 ${activeTab === item.id
                   ? 'text-[#56b4bd] opacity-100'
-                  : 'text-gray-400 opacity-40'
+                  : 'text-gray-400 opacity-60'
                 }`}
             >
               {item.label[lang]}
             </span>
-            {activeTab === item.id && (
-              <span className="absolute -bottom-1 w-5 h-1 bg-[#56b4bd] rounded-full shadow-[0_0_12px_#56b4bd] transition-all duration-500"></span>
-            )}
           </a>
         ))}
       </div>

@@ -145,10 +145,10 @@ export const FAQS: FAQItem[] = [
 export const GALLERY_IMAGES = [
   'https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1540555700478-4be289fbecee?q=80&w=2070&auto=format&fit=crop',
+  'https://lavandacasaspa.com/wp-content/uploads/2020/09/conoce-nuestros-tratamientos-corporales-spa-profesionales.jpg',
   'https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop',
   'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1544161515-4af6b1d462c2?q=80&w=2070&auto=format&fit=crop'
+  'https://agendapro.com/blog/wp-content/uploads/sites/2/2024/06/terapeuta20spa.jpg'
 ];
 
 export const CONTACT_INFO = {
