@@ -1,24 +1,19 @@
-import { createClient } from '@supabase/supabase-js';
+const { createClient } = require('@supabase/supabase-js');
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export const handler = async (event, context) => {
-    // CORS headers
-    const corsHeaders = {
-        'Access-Control-Allow-Credentials': 'true',
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods': 'GET,OPTIONS,PATCH,DELETE,POST,PUT',
-        'Access-Control-Allow-Headers': 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version'
-    };
+const corsHeaders = {
+    'Access-Control-Allow-Credentials': 'true',
+    'Access-Control-Allow-Origin': '*',
+    'Access-Control-Allow-Methods': 'GET,OPTIONS,POST',
+    'Access-Control-Allow-Headers': 'Content-Type, Authorization'
+};
 
+exports.handler = async function (event, context) {
     if (event.httpMethod === 'OPTIONS') {
-        return {
-            statusCode: 200,
-            headers: corsHeaders,
-            body: ''
-        };
+        return { statusCode: 200, headers: corsHeaders, body: '' };
     }
 
     if (event.httpMethod === 'GET') {
@@ -37,7 +32,7 @@ export const handler = async (event, context) => {
                 body: JSON.stringify(data ? data.value : {})
             };
         } catch (error) {
-            console.error(error);
+            console.error('Error GET:', error.message);
             return {
                 statusCode: 500,
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' },
@@ -61,7 +56,7 @@ export const handler = async (event, context) => {
                 body: JSON.stringify({ message: 'Saved to Supabase' })
             };
         } catch (error) {
-            console.error(error);
+            console.error('Error POST:', error.message);
             return {
                 statusCode: 500,
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' },
