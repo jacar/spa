@@ -1,4 +1,11 @@
 {
+  "chat": {
+    "message": {
+      "en": "Looking for personalized advice? Chat with us!",
+      "es": "¿Buscas asesoría personalizada? ¡Chatea con nosotros!"
+    },
+    "instructorImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png"
+  },
   "hero": {
     "title": {
       "en": "Your Transformation Begins Here",
@@ -14,80 +21,127 @@
     "founderName": "Yésica Serrano",
     "founderPhoto": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/yesica.png"
   },
+  "contact": {
+    "email": "Spadivineaesthetics93@gmail.com",
+    "phone": "(904) 806-6898",
+    "address": "42 Patina Pl, Saint Augustine FL 32092, USA"
+  },
+  "gallery": [
+    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop",
+    "https://lavandacasaspa.com/wp-content/uploads/2020/09/conoce-nuestros-tratamientos-corporales-spa-profesionales.jpg",
+    "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.48.20-PM.jpeg",
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAIf2uB7ZxJlFS3z6u6KDjsTUPUxz14RSN6w&s",
+    "https://agendapro.com/blog/wp-content/uploads/sites/2/2024/06/terapeuta20spa.jpg",
+    "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=1974&auto=format&fit=crop",
+    "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop"
+  ],
+  "socials": {
+    "tiktok": "https://www.tiktok.com/@divineaesthetics93",
+    "facebook": "https://www.facebook.com/yesica.serrano.601861",
+    "instagram": "https://www.instagram.com/divineaesthetics93"
+  },
+  "products": {
+    "title": {
+      "en": "Divine Essentials",
+      "es": "Esenciales Divine"
+    },
+    "facebookEmbed": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fyesica.serrano.601861%2Fposts%2Fpfbid0pMGArhgBwXDPcnVWZe8dpmg2NAwjxCjEAJsaisJNbG51rCicTqYtNZitkiaaPXckl&show_text=true&width=500"
+  },
   "services": [
     {
       "id": "facials",
+      "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop",
       "title": {
         "en": "Facial Cleanings",
         "es": "Limpieza Facial"
-      },
-      "image": "https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop"
+      }
     },
     {
       "id": "rejuvenation",
+      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop",
       "title": {
         "en": "Facial Rejuvenation",
         "es": "Rejuvenecimiento Facial"
-      },
-      "image": "https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop"
+      }
     },
     {
       "id": "body-cleaning",
+      "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop",
       "title": {
         "en": "Body Cleansing (Back, Arms, Chest)",
         "es": "Limpieza (Espalda, Brazos, Pecho)"
-      },
-      "image": "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?q=80&w=1974&auto=format&fit=crop"
+      }
     },
     {
       "id": "acne",
+      "image": "https://www.webcincodev.com/blog/wp-content/uploads/2026/03/pies-1.png",
       "title": {
         "en": "Acne Treatments",
         "es": "Tratamientos para el Acné"
       },
-      "image": "https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop",
-      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM-1.jpeg",
-      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM.jpeg"
+      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM.jpeg",
+      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM-1.jpeg"
     },
     {
       "id": "kobido",
+      "image": "https://www.webcincodev.com/blog/wp-content/uploads/2026/03/pies-2.png",
       "title": {
         "en": "Kobido Facial Massages",
         "es": "Masajes Faciales Kobido"
-      },
-      "image": "https://images.unsplash.com/photo-1552693673-1bf958298935?q=80&w=2070&auto=format&fit=crop"
+      }
     },
     {
       "id": "men-manipedi",
+      "image": "https://www.webcincodev.com/blog/wp-content/uploads/2026/03/pies.png",
       "title": {
         "en": "Manicure & Pedicure for Men",
         "es": "Manicura y Pedicura para Hombres"
-      },
-      "image": "https://images.unsplash.com/photo-1632345031435-8727f6897d53?q=80&w=2070&auto=format&fit=crop"
+      }
     },
     {
       "id": "reflexology",
+      "image": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop",
       "title": {
         "en": "Foot Reflexology",
         "es": "Reflexología Podal"
-      },
-      "image": "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop"
+      }
     },
     {
       "id": "whitening",
+      "image": "https://clinicamerced.cl/wp-content/uploads/2023/11/blanqueamiento-corporal.jpeg",
       "title": {
         "en": "Body Areas Whitening",
         "es": "Blanqueamiento de Zonas Corporales"
-      },
-      "image": "https://clinicamerced.cl/wp-content/uploads/2023/11/blanqueamiento-corporal.jpeg"
+      }
     },
     {
       "id": "relax-massage",
+      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop",
       "title": {
         "en": "Relaxing Massage",
         "es": "Masaje de Relajación"
+      }
+    }
+  ],
+  "beforeAfter": [
+    {
+      "id": 1,
+      "title": {
+        "en": "Deep Cleansing Results",
+        "es": "Resultados Limpieza Profunda"
       },
-      "image": "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop"
+      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/despues.png",
+      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/antes.png"
+    },
+    {
+      "id": 2,
+      "title": {
+        "en": "Hair restoration treatment",
+        "es": "Éxito en Tratamiento  Capilar"
+      },
+      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/des.png",
+      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/a_1.png"
     }
   ],
   "testimonials": [
@@ -115,59 +169,5 @@
         "es": "El tratamiento de limpieza profunda de espalda era exactamente lo que necesitaba. Un estudio profesional, limpio y muy relajante."
       }
     }
-  ],
-  "gallery": [
-    "https://images.unsplash.com/photo-1560750588-73207b1ef5b8?q=80&w=2070&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop",
-    "https://lavandacasaspa.com/wp-content/uploads/2020/09/conoce-nuestros-tratamientos-corporales-spa-profesionales.jpg",
-    "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.48.20-PM.jpeg",
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAIf2uB7ZxJlFS3z6u6KDjsTUPUxz14RSN6w&s",
-    "https://agendapro.com/blog/wp-content/uploads/sites/2/2024/06/terapeuta20spa.jpg",
-    "https://images.unsplash.com/photo-1590439471364-192aa70c0b53?q=80&w=1974&auto=format&fit=crop",
-    "https://images.unsplash.com/photo-1600334089648-b0d9d3028eb2?q=80&w=2070&auto=format&fit=crop"
-  ],
-  "beforeAfter": [
-    {
-      "id": 1,
-      "title": {
-        "en": "Deep Cleansing Results",
-        "es": "Resultados Limpieza Profunda"
-      },
-      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/antes.png",
-      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/despues.png"
-    },
-    {
-      "id": 2,
-      "title": {
-        "en": "Hair restoration treatment",
-        "es": "Éxito en Tratamiento  Capilar"
-      },
-      "beforeImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/a_1.png",
-      "afterImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/des.png"
-    }
-  ],
-  "chat": {
-    "instructorImage": "https://www.webcincodev.com/blog/wp-content/uploads/2026/02/asesor.png",
-    "message": {
-      "en": "Looking for personalized advice? Chat with us!",
-      "es": "¿Buscas asesoría personalizada? ¡Chatea con nosotros!"
-    }
-  },
-  "socials": {
-    "instagram": "https://www.instagram.com/divineaesthetics93",
-    "tiktok": "https://www.tiktok.com/@divineaesthetics93",
-    "facebook": "https://www.facebook.com/yesica.serrano.601861"
-  },
-  "products": {
-    "title": {
-      "en": "Divine Essentials",
-      "es": "Esenciales Divine"
-    },
-    "facebookEmbed": "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fyesica.serrano.601861%2Fposts%2Fpfbid0pMGArhgBwXDPcnVWZe8dpmg2NAwjxCjEAJsaisJNbG51rCicTqYtNZitkiaaPXckl&show_text=true&width=500"
-  },
-  "contact": {
-    "phone": "(904) 806-6898",
-    "email": "Spadivineaesthetics93@gmail.com",
-    "address": "42 Patina Pl, Saint Augustine FL 32092, USA"
-  }
+  ]
 }
