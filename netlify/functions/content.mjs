@@ -1,4 +1,4 @@
-const { createClient } = require('@supabase/supabase-js');
+import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
@@ -11,7 +11,7 @@ const corsHeaders = {
     'Access-Control-Allow-Headers': 'Content-Type, Authorization'
 };
 
-exports.handler = async function (event, context) {
+export const handler = async (event) => {
     if (event.httpMethod === 'OPTIONS') {
         return { statusCode: 200, headers: corsHeaders, body: '' };
     }
@@ -31,12 +31,12 @@ exports.handler = async function (event, context) {
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' },
                 body: JSON.stringify(data ? data.value : {})
             };
-        } catch (error) {
-            console.error('Error GET:', error.message);
+        } catch (err) {
+            console.error('GET error:', err.message);
             return {
                 statusCode: 500,
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-                body: JSON.stringify({ error: error.message })
+                body: JSON.stringify({ error: err.message })
             };
         }
     }
@@ -55,12 +55,12 @@ exports.handler = async function (event, context) {
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' },
                 body: JSON.stringify({ message: 'Saved to Supabase' })
             };
-        } catch (error) {
-            console.error('Error POST:', error.message);
+        } catch (err) {
+            console.error('POST error:', err.message);
             return {
                 statusCode: 500,
                 headers: { ...corsHeaders, 'Content-Type': 'application/json' },
-                body: JSON.stringify({ error: error.message })
+                body: JSON.stringify({ error: err.message })
             };
         }
     }
