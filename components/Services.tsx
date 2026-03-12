@@ -88,10 +88,10 @@ const Services: React.FC<ServicesProps> = ({ lang, previewData }) => {
 
               <div className="p-8">
                 <h3 className="text-2xl font-serif text-[#1a1a1a] mb-3">
-                  {service.title[lang]}
+                  {service.title?.[lang] || 'Servicio'}
                 </h3>
                 <p className="text-gray-500 text-sm leading-relaxed mb-6 font-light h-[3rem] line-clamp-2 overflow-hidden">
-                  {service.description[lang]}
+                  {service.description?.[lang] || ''}
                 </p>
 
                 {/* Before & After - Results display if available */}

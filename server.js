@@ -19,9 +19,27 @@ const DATA_FILE = path.join(DATA_DIR, 'content.json');
 // Supabase Init
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+
+if (!supabaseUrl || !supabaseKey) {
+    console.error('CRITICAL: Missing Supabase credentials. Check .env.local');
+} else {
+    console.log('Supabase initialized with URL:', supabaseUrl);
+}
+
 const supabase = createClient(supabaseUrl, supabaseKey);
 
+// Keep-alive ping para Supabase (Evita que la DB se suspenda por inactividad)
+setInterval(async () => {
+    try {
+        await supabase.from('app_config').select('id').limit(1);
+        console.log(`[Keep-Alive] Ping a Supabase exitoso a las ${new Date().toISOString()}`);
+    } catch (err) {
+        console.error('[Keep-Alive] Error al hacer ping a Supabase:', err.message);
+    }
+}, 10 * 60 * 1000); // 10 minutos
+
 // Asegurar que el directorio existe
+
 try {
     await fs.mkdir(DATA_DIR, { recursive: true });
 } catch (err) {
@@ -84,7 +102,7 @@ app.post('/api/content', async (req, res) => {
 });
 
 // Ruta catch-all para React (SPA)
-app.get('*', (req, res) => {
+app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
