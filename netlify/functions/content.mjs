@@ -2,7 +2,6 @@ import { createClient } from '@supabase/supabase-js';
 
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
-const supabase = createClient(supabaseUrl, supabaseKey);
 
 const corsHeaders = {
     'Access-Control-Allow-Credentials': 'true',
@@ -12,6 +11,21 @@ const corsHeaders = {
 };
 
 export const handler = async (event) => {
+    // Diagnóstico de variables de entorno
+    if (!supabaseUrl || !supabaseKey) {
+        return {
+            statusCode: 500,
+            headers: { ...corsHeaders, 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                error: 'Missing env vars',
+                hasUrl: !!supabaseUrl,
+                hasKey: !!supabaseKey
+            })
+        };
+    }
+
+    const supabase = createClient(supabaseUrl, supabaseKey);
+
     if (event.httpMethod === 'OPTIONS') {
         return { statusCode: 200, headers: corsHeaders, body: '' };
     }
