@@ -33,12 +33,12 @@ const Hero: React.FC<HeroProps> = ({ lang, previewData }) => {
       <div className="absolute inset-0 z-0">
         <img
           src={heroData.backgroundImage}
-          alt="Divine Spa Ambience"
-          className="w-full h-full object-cover object-right md:object-center"
+          alt="Yesica Serrano - Divine Aesthetics"
+          className="w-full h-full object-cover object-[80%_center] md:object-center transition-all duration-700"
         />
-        <div className="absolute inset-0 bg-gradient-to-b md:bg-gradient-to-r from-white/95 via-white/40 to-transparent"></div>
-        {/* Mobile-only darker bottom gradient to make content pop */}
-        <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white via-white/20 to-transparent opacity-80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-white/95 via-white/40 to-transparent opacity-90 md:opacity-100"></div>
+        {/* Mobile-optimized overlay to protect text readability without washing out the face */}
+        <div className="md:hidden absolute inset-0 bg-gradient-to-t from-white/20 via-transparent to-transparent"></div>
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-6 lg:px-8 w-full pt-20 md:pt-0">
