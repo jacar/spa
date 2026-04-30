@@ -14,7 +14,7 @@ const About: React.FC<AboutProps> = ({ lang, previewData }) => {
 
   React.useEffect(() => {
     if (previewData) return;
-    fetch('/api/content')
+    fetch('/api/content?t=' + Date.now())
       .then(res => res.json())
       .then(data => setContent(data))
       .catch(err => console.error(err));

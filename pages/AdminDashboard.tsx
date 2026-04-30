@@ -22,7 +22,7 @@ const AdminDashboard: React.FC = () => {
 
     const fetchContent = async () => {
         try {
-            const res = await axios.get('/api/content');
+            const res = await axios.get('/api/content?t=' + Date.now());
             setContent(res.data);
         } catch (err) {
             console.error('Error fetching content', err);

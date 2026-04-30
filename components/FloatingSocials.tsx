@@ -11,7 +11,7 @@ const FloatingSocials: React.FC<FloatingSocialsProps> = ({ lang }) => {
   const [links, setLinks] = useState<any>(SOCIAL_LINKS);
 
   useEffect(() => {
-    fetch('/api/content')
+    fetch('/api/content?t=' + Date.now())
       .then(res => res.json())
       .then(data => {
         if (data?.socials) setLinks(data.socials);

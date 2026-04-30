@@ -13,7 +13,7 @@ const FAQ: React.FC<FAQProps> = ({ lang }) => {
   const [content, setContent] = useState<any>(null);
 
   useEffect(() => {
-    fetch('/api/content')
+    fetch('/api/content?t=' + Date.now())
       .then(res => res.json())
       .then(data => setContent(data))
       .catch(err => console.error(err));

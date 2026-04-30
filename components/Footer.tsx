@@ -86,7 +86,7 @@ const Footer: React.FC<FooterProps> = ({ lang }) => {
   const [showTerms, setShowTerms] = useState(false);
 
   useEffect(() => {
-    fetch('/api/content')
+    fetch('/api/content?t=' + Date.now())
       .then(res => res.json())
       .then(data => {
         if (data?.socials) setLinks(data.socials);
