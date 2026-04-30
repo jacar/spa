@@ -34,7 +34,7 @@ export const SERVICES: ServiceItem[] = [
     title: { en: 'Facial Cleanings', es: 'Limpieza Facial' },
     description: { en: 'Deep cleaning to remove impurities and revitalize your skin.', es: 'Limpieza profunda para eliminar impurezas y revitalizar tu piel.' },
     icon: 'Sparkles',
-    image: 'https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://www.strongmeropower.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-03-12-at-9.27.32-AM.jpeg'
   },
   {
     id: 'rejuvenation',
