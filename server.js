@@ -1,12 +1,10 @@
-import { createClient } from '@supabase/supabase-js';
-import dotenv from 'dotenv';
+import { initializeApp } from "firebase/app";
+import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 import express from 'express';
 import cors from 'cors';
 import fs from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
-
-dotenv.config({ path: '.env.local' });
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -16,117 +14,84 @@ const PORT = 3005;
 const DATA_DIR = path.join(__dirname, 'data');
 const DATA_FILE = path.join(DATA_DIR, 'content.json');
 
-// Supabase Init
-const supabaseUrl = process.env.VITE_SUPABASE_URL;
-const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyAu-LYKX8UA4e3qK1pSFwKubJJAvbI15RY",
+  authDomain: "radioweb-36625.firebaseapp.com",
+  projectId: "radioweb-36625",
+  storageBucket: "radioweb-36625.firebasestorage.app",
+  messagingSenderId: "698367844815",
+  appId: "1:698367844815:web:0779c110ff1551043372ba"
+};
 
-let supabase = null;
-
-if (!supabaseUrl || !supabaseKey) {
-    console.warn('WARNING: Missing Supabase credentials. Continuing with local fallback mode.');
-} else {
-    try {
-        supabase = createClient(supabaseUrl, supabaseKey);
-        console.log('Supabase initialized with URL:', supabaseUrl);
-    } catch (err) {
-        console.error('Error initializing Supabase client:', err);
-    }
-}
-
-// Keep-alive ping para Supabase (Solo si está inicializado)
-if (supabase) {
-    setInterval(async () => {
-        try {
-            await supabase.from('app_config').select('id').limit(1);
-            console.log(`[Keep-Alive] Ping a Supabase exitoso a las ${new Date().toISOString()}`);
-        } catch (err) {
-            console.error('[Keep-Alive] Error al hacer ping a Supabase:', err.message);
-        }
-    }, 10 * 60 * 1000); // 10 minutos
-}
-
-// Asegurar que el directorio existe
-
-try {
-    await fs.mkdir(DATA_DIR, { recursive: true });
-} catch (err) {
-    console.error('Error creando directorio de datos:', err);
-}
+// Initialize Firebase
+const firebaseApp = initializeApp(firebaseConfig);
+const db = getFirestore(firebaseApp);
 
 app.use(cors());
 app.use(express.json());
-
-// Servir archivos estáticos del frontend (dist)
 app.use(express.static(path.join(__dirname, 'dist')));
 
-console.log('Ruta de datos:', DATA_FILE);
+// Ensure data directory exists (local dev)
+try {
+    await fs.mkdir(DATA_DIR, { recursive: true });
+} catch (err) {
+    // Ignore error in read-only environments
+}
 
-// Leer contenido (Preferentemente de Supabase, fallback local)
+// Read content (Firestore with local fallback)
 app.get('/api/content', async (req, res) => {
     try {
-        if (supabase) {
-            const { data, error } = await supabase
-                .from('app_config')
-                .select('value')
-                .eq('key', 'site_content')
-                .single();
+        const docRef = doc(db, "config", "site_content");
+        const docSnap = await getDoc(docRef);
 
-            if (error) throw error;
-            return res.json(data ? data.value : {});
+        if (docSnap.exists()) {
+            res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+            return res.json(docSnap.data());
         }
-        throw new Error('Supabase not initialized');
+        throw new Error('No content in Firestore');
     } catch (error) {
-        console.log('Using local fallback for content...');
+        console.log('Using local fallback for content:', error.message);
         try {
             const data = await fs.readFile(DATA_FILE, 'utf-8');
             res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-            res.setHeader('Pragma', 'no-cache');
-            res.setHeader('Expires', '0');
             res.json(JSON.parse(data));
         } catch (localErr) {
-            res.status(500).json({ error: 'Error al leer el contenido local' });
+            res.status(500).json({ error: 'Error al leer el contenido' });
         }
     }
 });
 
-// Guardar contenido (en Supabase y localmente)
+// Save content (Firestore and local fallback)
 app.post('/api/content', async (req, res) => {
     const newContent = req.body;
     try {
-        // En Vercel el file system es read-only, así que envolvemos esto en try/catch
+        // Try local save (will fail on Vercel, which is fine)
         try {
             await fs.writeFile(DATA_FILE, JSON.stringify(newContent, null, 2));
         } catch (fsError) {
-            console.warn('No se pudo escribir localmente (Normal en Vercel):', fsError.message);
+            console.warn('Local save failed (expected on Vercel)');
         }
 
-        if (supabase) {
-            const { error } = await supabase
-                .from('app_config')
-                .upsert({ key: 'site_content', value: newContent }, { onConflict: 'key' });
+        // Save to Firestore
+        const docRef = doc(db, "config", "site_content");
+        await setDoc(docRef, newContent);
 
-            if (error) throw error;
-            return res.json({ message: 'Contenido actualizado en Supabase y localmente' });
-        }
-        
-        res.json({ message: 'Contenido actualizado localmente (Modo Desarrollo)' });
+        res.json({ message: 'Contenido actualizado en Firebase' });
     } catch (error) {
         console.error('Error guardando contenido:', error);
         res.status(500).json({ error: 'Error al guardar el contenido' });
     }
 });
 
-// Ruta catch-all para React (SPA)
 app.use((req, res) => {
     res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 
-// Vercel Serverless Function Config
 export default app;
 
-// Local development
 if (process.env.NODE_ENV !== 'production') {
     app.listen(PORT, '0.0.0.0', () => {
-        console.log(`Servidor unificado corriendo en http://localhost:${PORT}`);
+        console.log(`Servidor con Firebase corriendo en http://localhost:${PORT}`);
     });
 }
