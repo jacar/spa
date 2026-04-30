@@ -84,7 +84,7 @@ export const SERVICES: ServiceItem[] = [
     title: { en: 'Foot Reflexology', es: 'Reflexología Podal' },
     description: { en: 'Targeted pressure points for full body wellness.', es: 'Puntos de presión específicos para el bienestar corporal total.' },
     icon: 'Footprints',
-    image: 'https://images.unsplash.com/photo-1600334129128-685c5582fd35?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://www.strongmeropower.com/wp-content/uploads/2026/04/podologia.png'
   },
   {
     id: 'whitening',
