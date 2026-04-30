@@ -42,7 +42,7 @@ export const SERVICES: ServiceItem[] = [
     title: { en: 'Facial Rejuvenation', es: 'Rejuvenecimiento Facial' },
     description: { en: 'Advanced treatments to reduce signs of aging.', es: 'Tratamientos avanzados para reducir los signos del envejecimiento.' },
     icon: 'Gem',
-    image: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://www.webcincodev.com/blog/wp-content/uploads/2026/03/pies-4.png'
   },
   {
     id: 'body-cleaning',

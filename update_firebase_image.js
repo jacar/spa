@@ -22,13 +22,13 @@ async function updateImage() {
       const data = docSnap.data();
       if (data.services) {
         data.services = data.services.map(s => {
-          if (s.id === "facials") {
-            s.image = "https://www.strongmeropower.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-03-12-at-9.27.32-AM.jpeg";
+          if (s.id === "rejuvenation") {
+            s.image = "https://www.webcincodev.com/blog/wp-content/uploads/2026/03/pies-4.png";
           }
           return s;
         });
         await setDoc(docRef, data);
-        console.log("Firebase updated successfully for Facial Cleaning!");
+        console.log("Firebase updated successfully for Facial Rejuvenation!");
       }
     } else {
       console.log("Document does not exist in Firebase yet.");
