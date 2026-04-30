@@ -22,13 +22,13 @@ async function updateImage() {
       const data = docSnap.data();
       if (data.services) {
         data.services = data.services.map(s => {
-          if (s.id === "relax-massage") {
-            s.image = "https://www.strongmeropower.com/wp-content/uploads/2026/04/WhatsApp-Image-2026-04-30-at-2.36.31-PM.jpeg";
+          if (s.id === "acne") {
+            s.image = "https://www.strongmeropower.com/wp-content/uploads/2026/04/facial.png";
           }
           return s;
         });
         await setDoc(docRef, data);
-        console.log("Firebase updated successfully for Relaxing Massage!");
+        console.log("Firebase updated successfully for Acne Treatments!");
       }
     } else {
       console.log("Document does not exist in Firebase yet.");

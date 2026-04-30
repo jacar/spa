@@ -58,7 +58,7 @@ export const SERVICES: ServiceItem[] = [
     title: { en: 'Acne Treatments', es: 'Tratamientos para el Acné' },
     description: { en: 'Specialized solutions for clear, healthy skin.', es: 'Soluciones especializadas para una piel clara y saludable.' },
     icon: 'CheckCircle2',
-    image: 'https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=2070&auto=format&fit=crop',
+    image: 'https://www.strongmeropower.com/wp-content/uploads/2026/04/facial.png',
     beforeImage: 'https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM-1.jpeg',
     afterImage: 'https://www.webcincodev.com/blog/wp-content/uploads/2026/02/WhatsApp-Image-2026-02-18-at-12.37.00-PM.jpeg'
   },
