@@ -93,8 +93,12 @@ app.get('/api/content', async (req, res) => {
 app.post('/api/content', async (req, res) => {
     const newContent = req.body;
     try {
-        // En desarrollo local siempre guardamos en el JSON para persistencia inmediata
-        await fs.writeFile(DATA_FILE, JSON.stringify(newContent, null, 2));
+        // En Vercel el file system es read-only, así que envolvemos esto en try/catch
+        try {
+            await fs.writeFile(DATA_FILE, JSON.stringify(newContent, null, 2));
+        } catch (fsError) {
+            console.warn('No se pudo escribir localmente (Normal en Vercel):', fsError.message);
+        }
 
         if (supabase) {
             const { error } = await supabase
